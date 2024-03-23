@@ -1,0 +1,21 @@
+.product{
+    border: solid magenta  5px;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgb(255, 190, 255);
+}
+
+.product-link{
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+    color: rgb(28, 101, 20);
+    background-color: rgb(157, 195, 42);
+    border-radius: 10px;
+}
+.product-link:hover{
+    background-color: rgb(194, 241, 52);
+}
+.product + .product{
+    margin-top: 20px;
+}

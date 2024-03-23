@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'styles/layout.css' %}">
+    {% block meta %}
+
+    {% endblock %}
+</head>
+
+<header class="header">
+    <nav  class="navmenu">
+        <span class="logo">Компьютерный магазин</span>
+        <a href="{% url 'home' %} " class="navlink">Главная</a>
+        <a href="{% url 'products' %}" class="navlink">Каталог</a>
+    </nav>
+</header>
+<hr>
+
+<main class="content">
+{% block page_content %}
+
+{% endblock %}
+</main>
+
+<hr>
+<footer class="footer">
+    <em>email: cat@gmail.com</em>
+</footer>
+
+</html>

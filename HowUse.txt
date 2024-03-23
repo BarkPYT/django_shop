@@ -1,0 +1,3 @@
+d:/python/env/Scripts/Activate.ps1
+cd shop
+python manage.py runserver

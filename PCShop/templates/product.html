@@ -1,0 +1,37 @@
+{% extends 'base_layout.html' %}
+
+{% load static %}
+
+{% block meta %}
+    <link rel="stylesheet" href="{% static 'styles/products.css' %}">
+{% endblock %}
+
+{% block page_content %}
+
+<article class="product">
+    <h3>{{ product.name }}</h3>
+    <img height="200px"
+        {% if  product.category is None %}
+           src='{% static "image/im.png" %}'
+        {% else %}
+            src="{{ product.category.image.url }}"
+        {% endif %}
+    >
+    <p>Название: {{ product.name }}</p>
+    <p>Серия: {{ product.ser }}</p>
+    {% if  product.category is not None %}
+        <p>Категория: {{ product.category }}</p>
+    {% endif %}
+    <p>
+        {% if product.price == 0 %}
+            Бесплатно
+        {% else %}
+            Цена: {{ product.price }}
+        {% endif %}
+    </p>
+    <a class="product-link" href="{% url 'make_order' product_id=product.id %}">
+        Купить
+    </a>
+</article>
+
+{% endblock %}
